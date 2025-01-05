@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Random Color Grid Generator</h1>
+      <h2>Random Color Grid Generator</h2>
 
       <div className="container">
         <div className="controls-container">

@@ -50,6 +50,11 @@ const CanvasGrid = ({ gridSize, generate, colors }) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
+    const parent = canvas.parentElement;
+    const size = Math.min(parent.offsetWidth, parent.offsetHeight);
+    canvas.width = size;
+    canvas.height = size;
+
     if (!generate) {
       clearGrid(ctx, canvas);
       return;
@@ -59,12 +64,7 @@ const CanvasGrid = ({ gridSize, generate, colors }) => {
 
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        width={600}
-        height={600}
-        style={{ border: "1px solid black" }}
-      />
+      <canvas ref={canvasRef} />
       {generate && (
         <button
           className="download-btn"
